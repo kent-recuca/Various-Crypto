@@ -21,6 +21,8 @@ def encrypt(txt, key):
                     ciphertext += chr((ord(j) - ord('A') - i) % 26 + ord('A'))
                 elif 'a' <= j <= 'z':
                     ciphertext += chr((ord(j) - ord('a') - i) % 26 + ord('a'))
+                elif '0' <= j <= '9':
+                    ciphertext += chr((ord(j) - ord('0') - i) % 10 + ord('0'))
                 else:
                     ciphertext += j
             ciphertexts.append(ciphertext)
@@ -33,6 +35,8 @@ def encrypt(txt, key):
                 ciphertext += chr((ord(j) - ord('A') - key) % 26 + ord('A'))
             elif 'a' <= j <= 'z':
                 ciphertext += chr((ord(j) - ord('a') - key) % 26 + ord('a'))
+            elif '0' <= j <= '9':
+                ciphertext += chr((ord(j) - ord('0') - key) % 10 + ord('0'))
             else:
                 ciphertext += j
         return ciphertext
@@ -47,6 +51,8 @@ def decrypt(txt, key):
                     plaintext += chr((ord(j) - ord('A') + i) % 26 + ord('A'))
                 elif 'a' <= j <= 'z':
                     plaintext += chr((ord(j) - ord('a') + i) % 26 + ord('a'))
+                elif '0' <= j <= '9':
+                    plaintext += chr((ord(j) - ord('0') - i) % 10 + ord('0'))
                 else:
                     plaintext += j
             plaintexts.append(plaintext)
@@ -59,6 +65,8 @@ def decrypt(txt, key):
                 plaintext += chr((ord(j) - ord('A') + key) % 26 + ord('A'))
             elif 'a' <= j <= 'z':
                 plaintext += chr((ord(j) - ord('a') + key) % 26 + ord('a'))
+            elif '0' <= j <= '9':
+                plaintext += chr((ord(j) - ord('0') - key) % 10 + ord('0'))
             else:
                 plaintext += j
         return plaintext
