@@ -2,7 +2,7 @@
 def main():
     direction = input("[E]ncode,[D]ecode: ")
     inputtext = input("INPUTTEXT: ")
-    key = input("KEY(Number or [A]ll): ")
+    key = input("KEY([0-9] or [A]ll): ")
     print("OUTPUTTEXT: ",end="")
     if direction == "E":
         print(decrypt(inputtext, key))
